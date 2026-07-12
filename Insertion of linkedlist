@@ -1,0 +1,65 @@
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        int count=0;
+        boolean value=false;
+        Node n1 = new Node(10);
+        Node n2 = new Node(20);
+        Node n3 = new Node(30);
+        n1.next=n2;
+        n2.next=n3;
+        Node head=n1;
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+"-->");
+            temp=temp.next;
+        }
+        System.out.println("null");
+        Node n0=new Node(5);
+        temp=head;
+        head=n0;
+        n0.next=temp;
+        temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+"-->");
+            temp=temp.next;
+        }
+        System.out.println("null");
+        Node n4=new Node(50);
+        temp=head;
+        while(temp.next!=null){
+            temp=temp.next;
+        }
+        temp.next=n4;
+        temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+"-->");
+            temp=temp.next;
+        }
+        System.out.println("null");
+        int target=20;
+        Node newnode=new Node(25);
+        temp= head;
+        while(temp!=null){
+            if(temp.data==target){
+                newnode.next=temp.next;
+                temp.next=newnode;
+                break;
+            }
+            temp=temp.next;
+        }
+        temp=head;
+        while(temp!=null){
+            System.out.print(temp.data+"-->");
+            temp=temp.next;
+        }
+        System.out.println("null");
+    }
+}
