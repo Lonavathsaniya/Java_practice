@@ -1,0 +1,37 @@
+class Node{
+    int data;
+    Node next;
+    Node(int data){
+        this.data=data;
+        this.next=null;
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        int count=0;
+        int target=30;
+        boolean value=false;
+        Node n1 = new Node(10);
+        Node n2 = new Node(20);
+        Node n3 = new Node(30);
+        n1.next=n2;
+        n2.next=n3;
+        Node head=n1;
+        Node temp=head;
+        while(temp!=null){
+            //count++
+            //System.out.print(temp.data+"-->");
+            if(temp.data==target){
+                value=true;
+                break;
+            }
+            temp=temp.next;
+        }
+        if(value){
+            System.out.println("Found "+target);
+        }
+        else{
+            System.out.println("Not Found "+target);
+        }
+    }
+}
